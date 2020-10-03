@@ -1,4 +1,8 @@
 # TO-DO: Complete the selection_sort() function below
+# The selection sort algorithm sorts an array by repeatedly finding
+# the minimum element (considering ascending order) from unsorted part and
+# putting it at the beginning. The algorithm maintains two subarrays in a given array.
+
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
@@ -7,21 +11,43 @@ def selection_sort(arr):
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
+        for j in range(cur_index + 1, len(arr)):
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
 
         # TO-DO: swap
         # Your code here
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
     return arr
+
+
+print('Selection Sort', selection_sort([7, 9, 4, 7, 6, 3, 6, 1, 0, 9, 5]))
+# Selection Sort [0, 1, 3, 4, 5, 6, 6, 7, 7, 9, 9]
 
 
 # TO-DO:  implement the Bubble Sort function below
+
+# this algo compares two values and if one is greater than the other,
+# the greater value moves to the right of the lesser value
+# and same thing for lesser value except it goes to left side of greater value
+
+
 def bubble_sort(arr):
     # Your code here
+    swapped = 1
 
+    while swapped > 0:
+        swapped = 0
+        for i in range(1, len(arr)):
+            if arr[i-1] > arr[i]:
+                arr[i-1], arr[i] = arr[i], arr[i-1]
+                swapped += 1
 
     return arr
 
+
+print('Bubble Sort', bubble_sort([7, 9, 4, 7, 6, 3, 6, 1, 0, 9, 5]))
 '''
 STRETCH: implement the Counting Sort function below
 
@@ -39,8 +65,9 @@ buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
+
+
 def counting_sort(arr, maximum=None):
     # Your code here
-
 
     return arr
