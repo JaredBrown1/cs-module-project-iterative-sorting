@@ -1,4 +1,8 @@
 # TO-DO: Complete the selection_sort() function below
+# The selection sort algorithm sorts an array by repeatedly finding
+# the minimum element (considering ascending order) from unsorted part and
+# putting it at the beginning. The algorithm maintains two subarrays in a given array.
+
 def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
@@ -23,6 +27,11 @@ print('Selection Sort', selection_sort([7, 9, 4, 7, 6, 3, 6, 1, 0, 9, 5]))
 
 
 # TO-DO:  implement the Bubble Sort function below
+
+# this algo compares two values and if one is greater than the other,
+# the greater value moves to the right of the lesser value
+# and same thing for lesser value except it goes to left side of greater value
+
 
 def bubble_sort(arr):
     # Your code here
